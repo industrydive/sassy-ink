@@ -1,5 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width"/>
@@ -10,18 +11,158 @@
 
     <style type="text/css">
       
-      /* Ink styles go here in production */
-      
+    /* Ink styles go here in production */
+
+    /* We need to wrap @font-face in a media query to hide it from Outlook. 
+    Otherwise, Outlook 07/10/13 will default all text back to Times New Roman.
+    Learn more: www.emaildesignreview.com/html-email-coding/web-fonts-in-email-1482/ */
+    @media screen { 
+      @font-face {
+       font-family: 'Open Sans';
+       font-style: normal;
+       font-weight: 400;
+       src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+      }
+      /* universal */
+      p, ul, li, td {
+        font-size: 16px;
+      }
+      .footer p, .footer ul, .footer li, .footer a {
+        font-size: 12px;
+      }
+      p.quote {
+        font-size: 24px !important;
+      }
+    }
+    
+    /* sections */
+    .top-bar {
+      background: #000000;
+    }
+    .section-one, .section-two {
+      background: #EFEFEF;
+    }
+    .section-three, .section-four, .footer {
+      background: #333333;
+    }
+
+    /* logo */
+    .logo {
+      max-width:200px;
+    }
+  
+    /* specific typography */
+    .section-one .subheader {
+      font-weight:400;
+      letter-spacing:1px;
+      font-size:18px;
+    }
+    .section-one .header {
+      color:#333333;
+      font-weight:800;
+      font-size:38px;
+      line-height:1.1;
+    }
+    @media (max-width: 500px) {
+      .section-one .header {
+        font-size: 34px;
+      }
+    }
+    .section-three .header {
+      color: #FFFFFF;
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:2px;
+      color:#EFEFEF;
+    }
+    .section-three p, .section-four p, .list td, .list li {
+      color: #EFEFEF;
+      font-size: 16px;
+    }
+    ul.list {
+      padding: 16px;
+      margin: 0;
+    }
+    .footer p, .footer ul, .footer li, .footer a {
+      color: #EFEFEF;
+      font-weight: 100;
+      font-size: 12px !important;
+      text-align: center;
+    }
+    .footer hr {
+      color: #CCCCCC;
+    }
+
+    /* buttons */
+    a.litmus-button, a.litmus-button:visited {
+      color: #FFFFFF !important;
+      font-size: 18px !important;
+      letter-spacing: 1px;
+      font-family: Helvetica, Arial, sans-serif; 
+      font-weight: normal; 
+      color: #ffffff; 
+      text-decoration: none; 
+      background-color: #FFB90F; 
+      border-top: 15px solid #FFB90F; 
+      border-bottom: 15px solid #FFB90F; 
+      border-left: 25px solid #FFB90F; 
+      border-right: 25px solid #FFB90F; 
+      border-radius: 3px; 
+      -webkit-border-radius: 3px; 
+      -moz-border-radius: 3px;
+      display:block;
+      text-align:center;
+    }
+    a.litmus-button:hover {
+      color: #FFFFFF !important;
+    }
+    @media (max-width: 525px) {
+      .litmus-button {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    /* hover effects */
+    .popout:hover {
+    animation: popout .3s ease;
+    -webkit-animation: popout .3s ease;
+    }
+    @keyframes popout {
+        from{transform:scale(1)}
+        80%{transform:scale(1.05)}
+        to{transform:scale(1)}
+    }
+    @-webkit-keyframes popout {
+        from{-webkit-transform:scale(1)}
+        80%{-webkit-transform:scale(1.05)}
+        to{-webkit-transform:scale(1)}
+    }
+    
+    /* quote */
+    p.quote {
+      font-size: 24px !important;
+      color: #FFB90F;
+      line-height: 1.3;
+    } 
+
+    /* apple-links */
+    .apple-link {
+      color: #CCCCCC !important;
+    }
+
     </style>
     
   </head>
   <body>
+
     <table class="body">
       <tr>
         <td class="center" align="center" valign="top">
 
-          <!-- Header Row -->
-          <table class="row" style="background:#333333;"> <!-- Styles go on the row -->
+          <!-- Top Bar Row – Single Column -->
+          <table class="row top-bar"> <!-- Styles go on the row -->
             <tr>
               <td class="center" align="center"> <!-- Center the container -->
                 <center>
@@ -34,8 +175,10 @@
                         <tr>
                           <td>
 
-                            <h1 style="color:#FFF;letter-spacing:1px;font-family:proxima nova;font-weight:600;text-align:center;font-size:40px;">Utility Dive Webinar</h1>
-                            <p style="color:#EFEFEF;letter-spacing:1px;font-family:proxima nova;font-size:18px;text-align:center;">You better sign up...or else</p>
+                            <!-- logo -->
+                            <center>
+                              <img src="http://d1bb041l1ipbcm.cloudfront.net/static/images/education_linelogo_white.png?163117020315" class="logo" height="37" width="200" align="left" hspace="2">
+                            </center>
                           
                           </td>
                           <td class="expander"></td>
@@ -50,8 +193,8 @@
             </tr>
           </table>
 
-          <!-- Body Row Single Column -->
-          <table class="row" style="background:#EFEFEF;"> <!-- Styles go on the row -->
+          <!-- Body Row – Single Column -->
+          <table class="row section-one"> <!-- Styles go on the row -->
             <tr>
               <td class="center" align="center"> <!-- Center the container -->
                 <center>
@@ -62,11 +205,27 @@
 
                       <table class="twelve columns">
                         <tr>
-                          <td >
+                          <td class="text-pad">
 
-                            <img class="center" src="http://placehold.it/500x200" width="580" height="200">
+                            <!-- table spacer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                </tr>
+                            </table>
 
-                            <p style="color:#333;letter-spacing:1px;font-family:proxima nova;line-height:1.3;"><span style="line-height:1;font-weight:600;font-size:24px;">Electric utilities are faced with a future of tremendous change and uncertainty</span> largely triggered by advancements in grid technology, new regulatory models and heightened customer expectations.</p>
+                            <!-- header -->
+                            <span class="subheader">PLAYBOOK</span>
+                            <h1 class="header">THE CORE OF A SUCCESSFUL 1:1 PROGRAM</h1>
+                            
+                            <!-- table spacer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p><strong>The proliferation of 1:1 device programs in K-12 school districts has opened a world of possibilities </strong> for students-allowing them to access high-quality educational content online and learn at their own pace. Yet, many administrators are hesitant to adopt 1:1 initiatives because their wireless networks are unequipped to handle more devices.</p>
                           
                           </td>
                           <td class="expander"></td>
@@ -83,41 +242,8 @@
             </tr>
           </table>
 
-           <!-- Body Row Single Column -->
-          <table class="row" style="background:#EFEFEF;"> <!-- Styles go on the row -->
-            <tr>
-              <td class="center" align="center"> <!-- Center the container -->
-                <center>
-
-                <table class="container"> <!-- Container restricts the content width -->
-                  <tr>
-                    <td class="wrapper last"> <!-- Wrapper stays on the inner table -->
-
-                      <table class="twelve columns">
-                        <tr>
-                          <td>
-
-                            <h3 style="color:#333;letter-spacing:1px;font-size:20px;font-family:proxima nova;font-weight:600;">Imagine this is a headline</h3>
-                            <p style="color:#333;letter-spacing:1px;font-family:proxima nova;font-size:14px;">This is some type of teaser text</p>
-
-                            <h3 style="color:#333;letter-spacing:1px;font-size:20px;font-family:proxima nova;font-weight:600;">Imagine this is a headline</h3>
-                            <p style="color:#333;letter-spacing:1px;font-family:proxima nova;font-size:14px;">This is some type of teaser text</p>
-                          
-                          </td>
-                          <td class="expander"></td>
-                        </tr>
-                      </table>
-
-                    </td>
-                  </tr>
-                </table>
-
-              </td>
-            </tr>
-          </table>
-
-          <!-- Body Row Double Column -->
-          <table class="row" style="background:#EFEFEF;"> <!-- Styles go on the row -->
+          <!-- Body Row – Double Column -->
+          <table class="row section-two"> <!-- Styles go on the row -->
             <tr>
               <td class="center" align="center"> <!-- Center the container -->
                 <center>
@@ -128,11 +254,22 @@
 
                       <table class="six columns">
                         <tr>
-                          <td>
+                          <td class="text-pad">
 
-                            <h3 style="line-height:1;color:#333;letter-spacing:1px;font-family:proxima nova;font-weight:600;text-align:center;">Utility Dive Webinar</h1>
-                            <p style="color:#333;letter-spacing:1px;font-family:proxima nova;font-size:18px;text-align:center;">You better sign up...or else</p>
-                          
+                            <p>Discover how this Connecticut school district successfully launched their 1:1 program by joining forces with a turnkey wireless provider.</p>
+
+                            <br class="show-for-small">
+
+                            <!-- button -->
+                            <a href="http://alistapart.com/article/can-email-be-responsive/" target="_blank" class="litmus-button popout">Download</a>
+                            
+                            <!-- table spacer -->
+                            <table class="hide-for-small" width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                </tr>
+                            </table>
+
                           </td>
                           <td class="expander"></td>
                         </tr>
@@ -143,10 +280,130 @@
 
                       <table class="six columns">
                         <tr>
-                          <td>
+                          <td class="center" align="center" valign="top">
 
-                            <h1 style="color:#FFF;letter-spacing:1px;font-family:proxima nova;font-weight:600;text-align:center;">Utility Dive Webinar</h1>
-                            <p style="color:#EFEFEF;letter-spacing:1px;font-family:proxima nova;font-size:18px;text-align:center;">You better sign up...or else</p>
+                            <!-- image -->
+                            <center>
+                              <a href="">
+                                <img src="https://s3.amazonaws.com/dive_static/rlp/sprint_mc_thumb.jpg" alt="Mobile Connectivity Playbook" class="center hide-for-small">
+                              </a>
+                            </center>
+
+                            <br>
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+          <!-- Body Row – Double Column -->
+          <table class="row section-three"> <!-- Styles go on the row -->
+            <tr>
+              <td class="center" align="center"> <!-- Center the container -->
+                <center>
+
+                <table class="container"> <!-- Container restricts the content width -->
+                  <tr>
+                    <td class="wrapper"> <!-- Wrapper stays on the inner table -->
+
+                      <!-- table spacer -->
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                          <tr>
+                              <td width="100%" height="20" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                          </tr>
+                      </table>
+
+                      <table class="six columns">
+                        <tr>
+                          <td class="text-pad">
+
+                            <!-- Thanks to Jeremy Peter for the "mso-hide:all" tip https://www.campaignmonitor.com/forums/topic/7405/how-to-hide-mobile-content-in-desktop-clients/ -->
+                            <span style="mso-hide: all;"> 
+                              <h3 class="header">INSIDE:</h3>
+                              <ul class="list">
+                                <li>What happens when "vision" becomes the focus of your launch strategy</li>
+                                <li>Critical steps to improve your infrastructure and provide 24 - 7 access</li>
+                                <li>Ways to optimize safety-filtering and provide security off-campus</li>
+                              </ul>
+                            </span>
+
+                            <!-- If you want to style an unordered list, you need to create it as a table, because Outlook does not support padding and margin on lists. This particular conditional comments Outlook 07-13. If you use "gte mso 9", you can target 00-13. -->
+                            <!--[if gte mso 12]>
+                            <table class="ms-list-header">
+                              <tr>
+                                <td style="font-size: 22px;
+                                  font-family: Helvetica, Arial, sans-serif;">
+                                  <h3>INSIDE:</h3>
+                                </td>
+                              </tr>
+                            </table>
+
+                            <table class="hide-for-small" width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="1" style="font-size:0px;line-height:0px;" style="font-size: 16px;
+                                  font-family: Helvetica, Arial, sans-serif;">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <table class="ms-list sub-columns"> 
+                              <tr>
+                                <td width="5%" style="font-size: 16px;
+                                  font-family: Helvetica, Arial, sans-serif;">
+                                  &bull;
+                                </td>
+                                <td width="90%" style="font-size: 16px;
+                                  font-family: Helvetica, Arial, sans-serif;">
+                                  What happens when "vision" becomes the focus of your launch strategy
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="5%" style="font-size: 16px;
+                                  font-family: Helvetica, Arial, sans-serif;">
+                                  &bull;
+                                </td>
+                                <td width="90%" style="font-size: 16px;
+                                  font-family: Helvetica, Arial, sans-serif;">
+                                  Critical steps to improve your infrastructure and provide 24 - 7 access
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="5%">
+                                  &bull;
+                                </td>
+                                <td width="90%" style="font-size: 16px;
+                                  font-family: Helvetica, Arial, sans-serif;">
+                                  Ways to optimize safety-filtering and provide security off-campus
+                                </td>
+                              </tr>
+                            </table> 
+                            <![endif]-->
+                            <!-- end of list -->
+
+                          </tr>
+                        </td>
+                      </table>
+                    </td>
+                    <td class="wrapper last"> <!-- Wrapper stays on the inner table -->
+
+                      <table class="six columns">
+                        <tr>
+                          <td class="text-pad">
+
+                            <!-- table spacer -->
+                            <table class="hide-for-small" width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="50" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p class="quote">"A good MDM system allows a school or district to control an entire fleet of devices from a single computer."</p>
                           
                           </td>
                           <td class="expander"></td>
@@ -161,6 +418,83 @@
             </tr>
           </table>
 
+          <!-- Body Row – Single Column -->
+          <table class="row section-four"> <!-- Styles go on the row -->
+            <tr>
+              <td class="center" align="center"> <!-- Center the container -->
+
+                <center>
+                <table class="container"> <!-- Container restricts the content width -->
+                  <tr>
+                    <td class="wrapper last"> <!-- Wrapper stays on the inner table -->
+
+                      <table class="twelve columns">
+                        <tr>
+                          <td class="text-pad">
+
+                            <!-- button -->
+                            <a href="http://alistapart.com/article/can-email-be-responsive/" target="_blank" class="litmus-button popout">Download</a>
+                          
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+                </center>
+
+              </td>
+            </tr>
+          </table>
+
+          <!-- Footer Row – Single Column -->
+          <table class="row footer"><!-- Styles go on the row -->
+            <tr>
+              <td class="center" align="center"> <!-- Center the container -->
+
+                <center>
+                <table class="container"> <!-- Container restricts the content width -->
+                  <tr>
+                    <td class="wrapper last"> <!-- Wrapper stays on the inner table -->
+
+                      <table class="twelve columns">
+                        <tr>
+                          <td class="text-pad footer">
+
+                            <center>
+
+                            <hr>
+
+                            <!-- table spacer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p>Want to reach 15,000+ utility industry executives with your own message? Email <a href="mailto:advertising@industrydive.com" class="apple-link">advertising@industrydive.com.</a></p>
+
+                            <p>About this email: You are receiving this message as part of your complimentary subscription to Utility Dive. If you no longer wish to receive Utility Dive, click here to unsubscribe instantly. See our full <a href="http://www.utilitydive.com/about/privacy/" class="apple-link">privacy policy</a>. Utility Dive is a product of Industry Dive, Inc. <span class="apple-link"> 829 7th St NW, Floor 3, Washington​, DC 20001.</span> </p>
+
+                            <a class="original-only apple-link" href="{optout_confirm_url}">Unsubscribe</a><span class="original-only apple-link">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a href="http://www.utilitydive.com/signup/" class="apple-link">Signup</a>
+
+                            </center>
+                          
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+              </center>
+
+              </td>
+            </tr>
+          </table>
           <!-- Footer Row -->
 
         </td>

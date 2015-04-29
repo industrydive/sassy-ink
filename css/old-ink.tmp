@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/*@charset "UTF-8";*/
 /**********************************************
 * Ink v1.0.5 - Copyright 2013 ZURB Inc        *
 **********************************************/
@@ -386,12 +386,12 @@ img.center {
 /* Typography */
 body, table.body, h1, h2, h3, h4, h5, h6, p, td {
   color: #666666;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   padding: 0;
   margin: 0;
   text-align: left;
-  line-height: 1.3; }
+  line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
   word-break: normal; }
@@ -518,7 +518,7 @@ table.medium-button td a,
 table.large-button td a {
   font-weight: bold;
   text-decoration: none;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #ffffff;
   font-size: 16px;
   display: block;
@@ -828,26 +828,5 @@ h3 {
 
 td.expander {
   font-family: unset; }
-
-/* Begin new newsletter ads */
-.newsletter-ad a.cta {
-  color: #52bdf2 !important; }
-.newsletter-ad td.sponsor-text {
-  padding-bottom: 0; }
-.newsletter-ad .sponsor-text h3 {
-  font-weight: bold;
-  font-size: 16px; }
-.newsletter-ad .sponsor-text span {
-  font-weight: bold;
-  color: #BBBBBB;
-  font-size: 12px;
-  display: block; }
-.newsletter-ad img {
-  margin-right: 10px;
-  display: block;
-  border: solid 1px #CCCCCC;
-  max-width: inherit; }
-
-/* End new newsletter ads */
 
 /*# sourceMappingURL=ink-chinatown.css.map */
