@@ -11,6 +11,70 @@
     <style type="text/css">
       
       /* Ink styles go here in production */
+
+      /* sections */
+    .top-bar {
+      background: #000000;
+    }
+    td.message {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    @media (max-width: 500px) {
+      td.message {
+        font-size: 16px;
+        line-height: 1.3;
+      }
+    }
+    /* logo */
+    .logo {
+      max-height: 50px;
+    }
+    .breaking-box {
+      background: #FFF;
+      border: solid 1px #CCC;
+    }
+    .breaking-box h1 {
+      font-weight:800;
+      font-size:34px;
+      color:#333;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+    @media (max-width: 500px) {
+      .breaking-box h1 {
+        font-size: 26px;
+      }
+    }
+    a.litmus-button, a.litmus-button:visited {
+      color: #FFFFFF !important;
+      font-size: 16px !important;
+      letter-spacing: 1px;
+      font-family: Helvetica, Arial, sans-serif; 
+      font-weight: normal; 
+      color: #ffffff; 
+      text-decoration: none; 
+      background-color: #D62828; 
+      border-top: 10px solid #D62828; 
+      border-bottom: 10px solid #D62828; 
+      border-left: 25px solid #D62828; 
+      border-right: 25px solid #D62828; 
+      border-radius: 3px; 
+      -webkit-border-radius: 3px; 
+      -moz-border-radius: 3px;
+      display:block;
+      text-align:center;
+    }
+    a.litmus-button:hover {
+      color: #FFFFFF !important;
+    }
+    @media (max-width: 525px) {
+      .litmus-button {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
       
     </style>
     
@@ -23,176 +87,148 @@
 
           <!-- Email Content -->
 
+            <!-- Top Bar Row – Single Column -->
+            <table class="row top-bar"> <!-- Styles go on the row -->
+              <tr>
+                <td class="center" align="center"> <!-- Center the container -->
+                  <center>
 
-            <table class="container section ad"><tr><td>
+                  <table class="container"> <!-- Container restricts the content width -->
+                    <tr>
+                      <td class="wrapper last"> <!-- Wrapper stays on the inner table -->
 
-              <!-- NOTE FROM THE EDITOR -->
-              <table class="row section-header">
-                  <tr>
-                      <td class="wrapper last">
+                        <table class="twelve columns">
+                          <tr>
+                            <td>
 
-                          <!-- SECTION HEADER -->
-                          <table class="twelve columns">
-                              <tr>
-                                  <td class="text-pad">
-                                      <h2>Note from the Editor</h2>
-                                  </td>
-                                  <td class="expander"></td>
-                              </tr>
-                          </table>
+                              <!-- logo -->
+                              <center>
+                                <a href="{logo_link}" style="color:#EFEFEF;">
+                                  <img src="{logo_url}" class="logo" height="{logo_height}" width="{logo_width}" alt="{pub_name}" align="left" hspace="2">
+                                </a>
+                              </center>
+                            
+                            </td>
+                            <td class="expander"></td>
+                          </tr>
+                        </table>
+
                       </td>
-                  </tr>
-              </table>
-              <table class="row section-body">
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+
+            <!-- table spacer -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
                 <tr>
-                    <td class="wrapper last">
-                          <!-- MAIN CONTENT SECTION - NOTE FROM THE EDITOR -->
-                          <table class="twelve columns">
-                              <tr>
-                                  <td class="text-pad">
-                                      <table>
-                                          <tr>
-                                              <td>
-                                                  Dear readers, <br><br>
+                    <td width="100%" height="1" style="font-size:0px;line-height:30px;">&nbsp;</td>
+                </tr>
+            </table>
 
-          I'm excited to introduce you to Utility Dive's redesigned newsletter. There are a number of new features that will enable us to better deliver news and analysis to you, including this editor's note and our new "What we're reading" section — a highly curated selection of important stories from around the web. <br><br>
-
-          In the coming weeks and months, we will be rolling out more new features, so stay tuned. If you have any feedback on the redesigned newsletter, please get in touch with us at <a href="mailto:utility.dive.editors@industrydive.com">utility.dive.editors@industrydive.com</a>. <br><br>
-
-          Thank you as always for choosing us to keep you informed on the latest developments in the electric utility industry. <br><br>
-
-
-          <img src="http://s3.amazonaws.com/dive_static/editorial/davide2.png" align="left" width=70 height=70 style="margin-right:10px;max-width:70px;max-height:70px;">
-                      Davide Savenije<br/>
-                      Senior Editor, Utility Dive<br/>
-                      <a href="https://twitter.com/davide_savenije">Twitter</a> | 
-                      <a href="mailto:utility.dive.editors@industrydive.com">E-mail</a> 
-
-                                              </td>
-                                          </tr>
-                                      </table>
-                                  </td>
-                                  <td class="expander"></td>
-                              </tr>
-                          </table>
-                      </td>
-                  </tr>
-              </table> <!-- end note from editor -->
-            </td></tr></table>
-
-
-
-
-                <!-- DIVE INTO A TOPIC -->
-            <table class="container section editorial"><tr><td>
-                <table class="row section-header">
-                      <tr>
-                          <td class="wrapper last">
-
-                              <!-- SECTION HEADER – DIVE INTO A TOPIC --> 
-                              <table class="twelve columns">
-                                  <tr>
-                                      <td class="text-pad">
-                                          <h2>Dive into a topic</h2>
-                                      </td>
-                                      <td class="expander"></td>
-                                  </tr>
-                              </table>
-                          </td>
-                     </tr>
-                </table>
+            <!-- breaking table -->
+            <table class="container breaking-box"><tr><td>
                 <!-- <table class="container border"><tr><td> -->
-                <table class="row section-body">
+                <table class="row">
                     <tr>
                         <td class="wrapper">
-                              <!-- MAIN CONTENT SECTION – DIVE INTO A TOPIC --> 
-                              <table class="six columns">
-                                  <tr>
-                                      <td class="content left-text-pad">
-                                      col1
+                          <!-- MAIN CONTENT SECTION – DIVE INTO A TOPIC --> 
+                          <table class="twelve columns">
+                              <tr>
+                                <td class="left-text-pad message">
 
-                                        <table class="button material-btn gray">
-                                            <tr>
-                                                <td>
-                                                    <a href="http://www.utilitydive.com/topic/Generation/">Generation</a>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                  <!-- table spacer -->
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                      <tr>
+                                          <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                      </tr>
+                                  </table>
 
-                                        
-                                            <table class="spacer"><tr><td height="2" style="font-size:2px; line-height:2px">&nbsp;</td></tr></table>
-                                        
-                                        
-                                        <table class="button material-btn gray">
-                                            <tr>
-                                                <td>
-                                                    <a href="http://www.utilitydive.com/topic/transmission-distribution/">T&amp;D</a>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                  <h1>BREAKING NEWS</h1>
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                      <tr>
+                                          <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                      </tr>
+                                  </table>
 
-                                        
-                                            <table class="spacer"><tr><td height="2" style="font-size:2px; line-height:2px">&nbsp;</td></tr></table>
-                                        
-                                        
-                                        <table class="button material-btn gray">
-                                            <tr>
-                                                <td>
-                                                    <a href="http://www.utilitydive.com/topic/solar/">Solar &amp; Renewables</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        end
+                                  {message}
+
+                                  <!-- table spacer -->
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                      <tr>
+                                          <td width="100%" height="1" style="font-size:0px;line-height:10px;">&nbsp;</td>
+                                      </tr>
+                                  </table>
+                                  {if read_more_url}
+                                  <table>
+                                    <tr>
+                                      <td>
+                                        <a href="{read_more_url}" target="_blank" class="litmus-button popout">Read More</a>
                                       </td>
-                                      <td class="expander"></td>
                                     </tr>
-                                </table> <!-- six columns -->
-                        </td>
-                        <td class="wrapper last">
-                            <table class="six columns">
-                                <tr>
-                                  <td class="content right-text-pad">col2
-                                    <table class="button material-btn gray">
-                                        <tr>
-                                            <td>
-                                                <a href="http://www.utilitydive.com/topic/demand-response/">Demand Response</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    
-                                        <table class="spacer"><tr><td height="2" style="font-size:2px; line-height:2px">&nbsp;</td></tr></table>
-                                    
-                                    
-                                    <table class="button material-btn gray">
-                                        <tr>
-                                            <td>
-                                                <a href="http://www.utilitydive.com/topic/market-news/">Corporate News</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    
-                                        <table class="spacer"><tr><td height="2" style="font-size:2px; line-height:2px">&nbsp;</td></tr></table>
-                                    
-                                    
-                                    <table class="button material-btn gray">
-                                        <tr>
-                                            <td>
-                                                <a href="http://www.utilitydive.com/topic/policy/">Regulation &amp; Policy</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                  </td>
-                                  <td class="expander"></td>
+                                  </table>
+                                  {/if}
+                                  <!-- table spacer -->
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                      <tr>
+                                          <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                      </tr>
+                                  </table>
+                                </td>
+                                <td class="expander"></td>
                               </tr>
                           </table>
                       </td>
                     </tr>
-                </table> <!-- end topics row -->
-                <!-- </td></tr></table> -->
-
+                </table>
             </td></tr></table> <!-- container -->
+            <!-- Footer Row – Single Column -->
+          <table class="row footer"><!-- Styles go on the row -->
+            <tr>
+              <td class="center" align="center"> <!-- Center the container -->
+
+                <center>
+                <table class="container"> <!-- Container restricts the content width -->
+                  <tr>
+                    <td class="wrapper last"> <!-- Wrapper stays on the inner table -->
+
+                      <table class="twelve columns">
+                        <tr>
+                          <td class="text-pad footer">
+
+                            <center>
+
+                            <hr>
+
+                            <!-- table spacer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+                                <tr>
+                                    <td width="100%" height="1" style="font-size:0px;line-height:0px;">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p style="color: #666666; font-size: 11px; max-width: 590px; font-family: Arial, sans-serif; margin: 5px;">
+                            Want to reach thousands industry executives with your own message? Email <a href="mailto:advertising@industrydive.com" style="color: #666666; font-size: 11px;">advertising@industrydive.com</a>.<br><br><strong>About this email:</strong> You are receiving this message as part of your complimentary subscription to <a href="{base_url}" style="color: #666666; font-size: 11px;">{pub_name}</a>. If you no longer wish to receive {pub_name}, you may <a href="{optout_confirm_url}" style="color: #666666;">unsubscribe</a>. See our full <a href="http://www.industrydive.com/privacy-policy/" style="color: #666666; font-size: 11px;">privacy policy</a>. {SITE_NAME} is a product of <a href="http://www.industrydive.com/" style="color: #666666; text-decoration: none; font-size: 11px;">Industry Dive, Inc</a>. 1312&#8203; 18th St NW, Suite 201, Washington,&#8203; DC 20036<br></p>
+
+                            </center>
+                          
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+              </center>
+
+              </td>
+            </tr>
+          </table>
+          <!-- Footer Row -->
+
           </center>
         </td>
       </tr>
