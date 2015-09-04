@@ -9,9 +9,6 @@ body, .body {
 	background: #FFFFFF;
 	.ExternalClass * {line-height: 140%}
 	h1, h2, h3, h4, h5, h6, p, li, td {
-		-moz-hyphens: none;
-		-webkit-hyphens: none;
-		hyphens: none;
 		letter-spacing: .4px;
 		mso-line-height-rule: exactly;
 		line-height: 1.6;
@@ -32,7 +29,37 @@ body, .body {
 	p, li {
 		font-size: 14px;
 	}
+
+	// stop doing the weird thing with hypens and breaking words.
+	td {
+		// this overrides "TD" rules from line 88, scss/ink/components/_normalize.scss
+		word-break: unset;
+		-moz-hyphens: unset;
+		-webkit-hyphens: unset;
+		hyphens: unset;
+	}
+
+	// save bytes on spacers by removing unneeded properties
+	table.spacer {
+		text-align: unset;
+		vertical-align: unset;
+		tr {
+			text-align: unset;
+			vertical-align: unset;
+			font-family: unset;
+			td {
+				font-weight: unset;
+				letter-spacing: unset;
+				font-family: unset;
+				mso-line-height-rule: unset;
+				text-align: unset;
+				vertical-align: unset;
+				word-break: unset;
+			}
+		}
+	}
 }
+
 
 // Section backgrounds
 .section-stripe {
