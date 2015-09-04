@@ -1,9 +1,15 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+/* standard base Ink CSS */
+@import "../ink.scss";
+
+/* Industry Dive geronimo custom CSS */
 body, .body {
 	background: #FFFFFF;
 	.ExternalClass * {line-height: 140%}
 	h1, h2, h3, h4, h5, h6, p, li, td {
 		-moz-hyphens: none;
-		-ms-hyphens: none;
 		-webkit-hyphens: none;
 		hyphens: none;
 		letter-spacing: .4px;
@@ -159,10 +165,7 @@ body, .body {
 	}
 }
 
-// Purely to save space on the inliner. Should have no effect.
-td.expander {
-	font-family: unset;
-}
+
 
 /* Buttons */
 .button.cta {
