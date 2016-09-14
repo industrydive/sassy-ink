@@ -16,7 +16,6 @@
 	"ink/components/panels",
 	"ink/components/buttons",
 	"ink/components/outlook-first",
-	"ink/components/media-query",
-	"ink/components/unset_unneeded_attributes";
+	"ink/components/media-query";
 
-@import 'ink-geronimo.scss';
+@import "ink/components/unset_unneeded_attributes";  // reduce inlined file size
