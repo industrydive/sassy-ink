@@ -8,6 +8,7 @@
 // @variables
 //
 $include-html-normalize-classes: $include-html-classes !default;
+$include-hyphens: false !default;
 
 // We use these to style the <hr> element
 $hr-color: #d9d9d9 !default;
@@ -16,7 +17,7 @@ $hr-height: 1px !default;
 
 @include exports("normalize") {
     @if $include-html-normalize-classes {
-    /* Client-specific Styles & Reset */
+    /* Client-specific Styles and Reset */
 
     #outlook a { 
       padding:0; 
@@ -87,9 +88,16 @@ $hr-height: 1px !default;
 
     td { 
       word-break: break-word;
-      -webkit-hyphens: auto;
-      -moz-hyphens: auto;
-      hyphens: auto;
+      @if $include-hyphens == true {
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+      }
+      @else {
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        hyphens: none;        
+      }
       border-collapse: collapse !important; 
     }
 

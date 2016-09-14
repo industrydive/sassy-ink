@@ -11,10 +11,10 @@ $include-html-button-classes: $include-html-classes !default;
 
 // We use these to build padding for buttons.
 $button-dft: 8px 0 !default;
-$button-tny: 5px 0 4px !default;
-$button-sml: 8px 0 7px !default;
-$button-med: 12px 0 10px !default;
-$button-lrg: 21px 0 18px !default;
+$button-tny: 5px 0 !default;
+$button-sml: 8px 0 !default;
+$button-med: 12px 0 !default;
+$button-lrg: 21px 0 !default;
 
 // We use these to control button text styles.
 $button-font-family: $base-font-family !default;
@@ -37,8 +37,8 @@ $secondary-color: #e9e9e9 !default;
 $alert-color: #c60f13 !default;
 $success-color: #5da423 !default;
 $secondary-border-color: #d0d0d0 !default;
-$alert-border-color: #457a1a !default;
-$success-border-color: #970b0e !default;
+$alert-border-color: #970b0e !default;
+$success-border-color: #457a1a !default;
 
 // We use this to set the default radius used throughout the core.
 $button-radius: $global-radius !default;
@@ -69,6 +69,7 @@ $button-round: $global-rounded !default;
       border: $button-border-width $button-border-style color2hex($button-border-color);
       color: color2hex($button-font-color);
       padding: $button-dft;
+      line-height: initial !important;
     }
 
     table.tiny-button td {
@@ -180,20 +181,20 @@ $button-round: $global-rounded !default;
 
     table.success td {
       background: color2hex($success-color);
-      border-color: color2hex($alert-border-color);
+      border-color: color2hex($success-border-color);
     }
 
     table.success:hover td {
-      background: color2hex($alert-border-color) !important;
+      background: color2hex($success-border-color) !important;
     }
 
     table.alert td {
       background: color2hex($alert-color);
-      border-color: color2hex($success-border-color);
+      border-color: color2hex($alert-border-color);
     }
 
     table.alert:hover td {
-      background: color2hex($success-border-color) !important;
+      background: color2hex($alert-border-color) !important;
     }
 
     table.radius td {
