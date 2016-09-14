@@ -1,0 +1,10 @@
+// These are rules added to reconcile differences between the css generated from sassy ink 
+//	as of 195ef7d1b2ed28f and what's actually in production on divesite as of a8c84712dfb79
+//	Guessing there were manual edits made to the generated CSS on divesite.
+
+img {
+	width: unset;
+	float: unset;
+	clear: unset;
+	display: unset;
+}

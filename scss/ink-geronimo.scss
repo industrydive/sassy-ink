@@ -1,22 +1,3 @@
-/**********************************************
-* Ink v1.0.5 - Copyright 2013 ZURB Inc        *
-**********************************************/
-	
-// Make sure the charset is set appropriately
-@charset "UTF-8";
-
-// Behold, here are all the Ink components.
-@import
-	"ink/settings",
-	"ink/components/normalize",
-	"ink/components/grid",
-	"ink/components/block-grid",
-	"ink/components/alignment",
-	"ink/components/type",
-	"ink/components/panels",
-	"ink/components/buttons",
-	"ink/components/outlook-first",
-	"ink/components/media-query";
-
-@import "ink/components/unset_unneeded_attributes";  // reduce inlined file size
-@import "dive/geronimo.scss";  // custom rules specifically for Geronimo template
+@import "ink.scss";  // include all of Ink Foundation base
+@import "dive/geronimo.scss";  // custom rules specifically for Geronimo templat
+@import "dive/geronimo-ink-hacks.scss";  // extra hacks that make geronimo match production divesite css
